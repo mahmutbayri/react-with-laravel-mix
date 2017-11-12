@@ -15,6 +15,8 @@ export default class Example extends Component {
     }
 }
 
-if (document.getElementById('example')) {
-    ReactDOM.render(<Example title="Card title" text="Some quick example text to build on the card title and make up the bulk of the card's content." />, document.getElementById('example'));
-}
+ReactDOM.render(<Example
+    title="Card title"
+    text="Some quick example text to build on the card title and make up the bulk of the card's content." />,
+    document.getElementById('root')
+);

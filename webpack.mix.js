@@ -15,3 +15,12 @@ mix.config.resourceRoot = 'src';
 
 mix.react('src/js/app.js', 'public/js')
     .sass('node_modules/bootstrap/scss/bootstrap.scss', 'public/css');
+
+
+/*
+ |--------------------------------------------------------------------------
+ | Examples
+ |--------------------------------------------------------------------------
+ */
+mix.react('src/examples/clock.js', 'public/examples/js');
+mix.react('src/examples/functional_component.js', 'public/examples/js');
