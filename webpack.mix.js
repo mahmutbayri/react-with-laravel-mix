@@ -24,3 +24,5 @@ mix.react('src/js/app.js', 'public/js')
  */
 mix.react('src/examples/clock.js', 'public/examples/js');
 mix.react('src/examples/functional_component.js', 'public/examples/js');
+mix.react('src/examples/rendering.js', 'public/examples/js');
+mix.react('src/examples/events.js', 'public/examples/js');

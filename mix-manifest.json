@@ -1,6 +1,8 @@
 {
     "/public/js/app.js": "/public/js/app.js",
     "/public/css/bootstrap.css": "/public/css/bootstrap.css",
+    "/public/examples/js/events.js": "/public/examples/js/events.js",
+    "/public/examples/js/rendering.js": "/public/examples/js/rendering.js",
     "/public/examples/js/functional_component.js": "/public/examples/js/functional_component.js",
     "/public/examples/js/clock.js": "/public/examples/js/clock.js"
 }
