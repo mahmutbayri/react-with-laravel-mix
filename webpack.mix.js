@@ -26,3 +26,11 @@ mix.react('src/examples/clock.js', 'public/examples/js');
 mix.react('src/examples/functional_component.js', 'public/examples/js');
 mix.react('src/examples/rendering.js', 'public/examples/js');
 mix.react('src/examples/events.js', 'public/examples/js');
+mix.react('src/examples/ajax.js', 'public/examples/js');
+
+
+
+
+
+mix.react('src/examples/experimental.js', 'public/examples/js');
+mix.react('src/js/javascriptsample.js', 'public/examples/js');

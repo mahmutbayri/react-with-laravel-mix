@@ -4,5 +4,8 @@
     "/public/examples/js/events.js": "/public/examples/js/events.js",
     "/public/examples/js/rendering.js": "/public/examples/js/rendering.js",
     "/public/examples/js/functional_component.js": "/public/examples/js/functional_component.js",
-    "/public/examples/js/clock.js": "/public/examples/js/clock.js"
+    "/public/examples/js/experimental.js": "/public/examples/js/experimental.js",
+    "/public/examples/js/clock.js": "/public/examples/js/clock.js",
+    "/public/examples/js/ajax.js": "/public/examples/js/ajax.js",
+    "/public/examples/js/javascriptsample.js": "/public/examples/js/javascriptsample.js"
 }
