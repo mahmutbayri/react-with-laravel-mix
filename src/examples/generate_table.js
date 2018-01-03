@@ -11,7 +11,6 @@ class TableGenerator extends Component {
     }
 
     updateTable(options) {
-        console.log(options);
         this.setState((prevState, props) => {
             return options;
         })
@@ -49,8 +48,7 @@ class TableGeneratorWithJsx extends Component {
 
         let rowCount = this.props.passedVal.row;
         let colCount = this.props.passedVal.col;
-
-        console.log(this.props, "TableGeneratorWithJsx");
+        // console.log(this.props, "TableGeneratorWithJsx");
 
         let headCols = [];
 
@@ -67,7 +65,23 @@ class TableGeneratorWithJsx extends Component {
             bodyRows.push(<tr key={i}>{bodyCols}</tr>);
             bodyCols = [];
         }
-        return <table className="table table-striped">
+
+        let tableClasses = [];
+
+
+        if (this.props.passedVal.tableStriped) {
+            tableClasses.push('table-striped');
+        }
+
+        if (this.props.passedVal.tableDark) {
+            tableClasses.push('table-dark');
+        }
+
+        if (this.props.passedVal.tableBordered) {
+            tableClasses.push('table-bordered');
+        }
+
+        return <table className={"table " + (tableClasses.join(' '))}>
             <thead>
             <tr>{headCols}</tr>
             </thead>
@@ -84,12 +98,19 @@ class Form extends Component {
 
         this.props.onUpdate({
             col: this.colInput.value,
-            row: this.rowInput.value
+            row: this.rowInput.value,
+            tableDark: this.tableDark.checked,
+            tableStriped: this.tableStriped.checked,
+            tableBordered: this.tableBordered.checked
         })
     }
 
+    handleCheck() {
+        this.form.dispatchEvent(new Event('submit'));
+    }
+
     render() {
-        return <form onSubmit={this.handleSubmit.bind(this)}>
+        return <form onSubmit={this.handleSubmit.bind(this)} ref={input => this.form = input}>
             <div className="form-group">
                 <label>Columns</label>
                 <input className="form-control" defaultValue={this.props.passedVal.col} ref={input => this.colInput = input}/>
@@ -97,6 +118,19 @@ class Form extends Component {
             <div className="form-group">
                 <label>Rows</label>
                 <input className="form-control" defaultValue={this.props.passedVal.row} ref={input => this.rowInput = input}/>
+            </div>
+            <div className="form-check">
+                <input type="checkbox" className="form-check-input" ref={input => this.tableDark = input} onChange={this.handleCheck.bind(this)}/>
+                <label className="form-check-label">Table Dark ? </label>
+            </div>
+            <div className="form-check">
+                <input type="checkbox" className="form-check-input" ref={input => this.tableStriped = input} onChange={this.handleCheck.bind(this)}/>
+                <label className="form-check-label">Table Striped ? </label>
+            </div>
+
+            <div className="form-check">
+                <input type="checkbox" className="form-check-input" ref={input => this.tableBordered = input} onChange={this.handleCheck.bind(this)}/>
+                <label className="form-check-label">Table Bordered ? </label>
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
         </form>
