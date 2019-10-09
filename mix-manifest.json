@@ -7,6 +7,7 @@
     "/public/examples/js/generate_table.js": "/public/examples/js/generate_table.js",
     "/public/examples/js/javascriptsample.js": "/public/examples/js/javascriptsample.js",
     "/public/examples/js/rendering.js": "/public/examples/js/rendering.js",
+    "/public/examples/js/websocket.js": "/public/examples/js/websocket.js",
     "/public/js/app.js": "/public/js/app.js",
     "/public/css/bootstrap.css": "/public/css/bootstrap.css"
 }

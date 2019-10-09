@@ -29,6 +29,7 @@ mix.react('src/examples/rendering.js', 'public/examples/js');
 mix.react('src/examples/events.js', 'public/examples/js');
 mix.react('src/examples/ajax.js', 'public/examples/js');
 mix.react('src/examples/generate_table.js', 'public/examples/js');
+mix.react('src/examples/websocket.js', 'public/examples/js');
 
 
 
