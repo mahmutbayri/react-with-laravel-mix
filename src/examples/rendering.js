@@ -1,30 +1,44 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-
-function Mailbox(props) {
-    const messages = props.messages;
-    if(messages.length > 0) {
-        return <div>mesaj var</div>
-    }
-    return <div>Mesaj var</div>
+function Functional(props) {
+    const {messages} = props;
+    return (
+        <div>
+            {
+                messages.length > 0
+                    ? `there are ${messages.length} messages`
+                    : 'there is not any message.'
+            }
+        </div>
+    )
 }
 
-class Mailbox2 extends React.Component {
-
+class ComponentBase extends Component {
     render() {
+        const {messages} = this.props;
         return (
-            <div>{this.props.messages.length > 0 ? 'there are ' + this.props.length + ' messages' : 'there is not any message. '}</div>
+            <div>
+                {
+                    messages.length > 0
+                        ? `there are ${messages.length} messages`
+                        : 'there is not any message.'
+                }
+            </div>
         )
     }
 }
 
-const messages = ["a", "b", "c",];
+const messages = [
+    "a",
+    "b",
+    "c",
+];
 
 ReactDOM.render(
     <div>
-        <Mailbox messages={messages} />
-        <Mailbox2 messages={messages} />
+        <Functional messages={messages}/>
+        <ComponentBase messages={messages}/>
     </div>,
     document.getElementById('root')
 );
