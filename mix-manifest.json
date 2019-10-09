@@ -1,12 +1,12 @@
 {
-    "/public/js/app.js": "/public/js/app.js",
-    "/public/css/bootstrap.css": "/public/css/bootstrap.css",
-    "/public/examples/js/events.js": "/public/examples/js/events.js",
-    "/public/examples/js/rendering.js": "/public/examples/js/rendering.js",
-    "/public/examples/js/generate_table.js": "/public/examples/js/generate_table.js",
-    "/public/examples/js/functional_component.js": "/public/examples/js/functional_component.js",
-    "/public/examples/js/experimental.js": "/public/examples/js/experimental.js",
-    "/public/examples/js/clock.js": "/public/examples/js/clock.js",
     "/public/examples/js/ajax.js": "/public/examples/js/ajax.js",
-    "/public/examples/js/javascriptsample.js": "/public/examples/js/javascriptsample.js"
+    "/public/examples/js/clock.js": "/public/examples/js/clock.js",
+    "/public/examples/js/events.js": "/public/examples/js/events.js",
+    "/public/examples/js/experimental.js": "/public/examples/js/experimental.js",
+    "/public/examples/js/functional_component.js": "/public/examples/js/functional_component.js",
+    "/public/examples/js/generate_table.js": "/public/examples/js/generate_table.js",
+    "/public/examples/js/javascriptsample.js": "/public/examples/js/javascriptsample.js",
+    "/public/examples/js/rendering.js": "/public/examples/js/rendering.js",
+    "/public/js/app.js": "/public/js/app.js",
+    "/public/css/bootstrap.css": "/public/css/bootstrap.css"
 }

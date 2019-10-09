@@ -1,6 +1,6 @@
-const { mix } = require('laravel-mix');
+const mix = require('laravel-mix');
 
-mix.config.resourceRoot = 'src';
+// mix.config.resourceRoot = 'src';
 
 /*
  |--------------------------------------------------------------------------
@@ -15,6 +15,7 @@ mix.config.resourceRoot = 'src';
 
 mix.react('src/js/app.js', 'public/js')
     .sass('node_modules/bootstrap/scss/bootstrap.scss', 'public/css');
+
 
 
 /*

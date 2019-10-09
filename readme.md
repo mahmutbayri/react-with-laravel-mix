@@ -6,8 +6,9 @@
 - Lodash
 
 ## Running
-    yarn serve
-or
     npm run serve
 
-Please visit to https://laravel.com/docs/5.5/mix for more information about Laravel Mix.
+Example pages are at http://localhost:3000/examples/
+
+Please visit to https://laravel.com/docs/6.0/mix for more information about Laravel Mix.
+

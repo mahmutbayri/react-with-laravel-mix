@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
     "watch-poll": "npm run watch -- --watch-poll",
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
@@ -11,17 +11,20 @@
     "serve": "node index.js"
   },
   "devDependencies": {
-    "axios": "^0.17",
-    "babel-preset-react": "^6.24.1",
+    "@babel/preset-react": "^7.6.3",
+    "axios": "^0.19",
     "cross-env": "^5.1",
-    "jquery": "^3.2",
-    "laravel-mix": "^1.0",
-    "lodash": "^4.17.4"
+    "laravel-mix": "^4.0.7",
+    "lodash": "^4.17.13",
+    "resolve-url-loader": "^2.3.1",
+    "sass": "^1.15.2",
+    "sass-loader": "^7.1.0"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-beta.3",
     "express": "^4.16.2",
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0"
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "jquery": "^3.4"
   }
 }
