@@ -22,6 +22,10 @@ app.ws('/', function (ws, req) {
         ws.send(JSON.stringify(exampleData.firstData));
     });
 
+    ws.on('close', function () {
+        clearInterval(intervalCounter);
+    });
+
     let updatedData = exampleData.others;
 
     let counter = 0;
