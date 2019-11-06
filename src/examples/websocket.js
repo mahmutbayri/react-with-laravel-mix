@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import EventEmitter from 'events';
+import _ from 'lodash';
 
 const myEmitter = new EventEmitter();
 const webSocket = new WebSocket('ws://localhost:3001');
@@ -8,7 +9,7 @@ const webSocket = new WebSocket('ws://localhost:3001');
 webSocket.onmessage = function (e) {
     myEmitter.emit('event', {
         type: 'data',
-        message: e.data
+        message: JSON.parse(e.data),
     });
 };
 
@@ -35,7 +36,7 @@ class Container extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: ['default'],
+            list: [],
             message: 'No error',
         };
     }
@@ -43,8 +44,11 @@ class Container extends Component {
     componentDidMount() {
         myEmitter.on('event', (data) => {
             if (data.type === 'data') {
+                if (!_.isArray(data.message)) {
+                    data.message = [data.message];
+                }
                 this.setState({
-                    list: [...this.state.list, data.message],
+                    list: _.sortBy(_.unionBy(data.message, this.state.list, 'id'), 'id'),
                 });
             }
 
@@ -66,15 +70,26 @@ class Container extends Component {
                             {this.state.message}
                         </div>
                     </h6>
-                    <ul className="list-group">
+                    <table className="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">Currency</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                        </thead>
+                        <tbody>
                         {
-                            this.state.list.map(function (item, index) {
+                            this.state.list.map(function (item) {
                                 return (
-                                    <li className="list-group-item" key={index}>{item}</li>
+                                    <tr key={item.id}>
+                                        <td>{item.id}</td>
+                                        <td>{item.value}</td>
+                                    </tr>
                                 )
                             })
                         }
-                    </ul>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         )

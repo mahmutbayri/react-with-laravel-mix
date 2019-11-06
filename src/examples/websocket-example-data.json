@@ -1,0 +1,46 @@
+{
+  "firstData": [
+    {
+      "id": "USD",
+      "value": 5.87
+    },
+    {
+      "id": "EUR",
+      "value": 6.87
+    },
+    {
+      "id": "GBP",
+      "value": 2.87
+    }
+  ],
+  "others": [
+    {
+      "id": "USD",
+      "value": 5.5
+    },
+    {
+      "id": "EUR",
+      "value": 6.7
+    },
+    {
+      "id": "GBP",
+      "value": 2.3
+    },
+    {
+      "id": "USD",
+      "value": 5.7
+    },
+    {
+      "id": "USD",
+      "value": 5.6
+    },
+    {
+      "id": "USD",
+      "value": 5.65
+    },
+    {
+      "id": "GBP",
+      "value": 2.2
+    }
+  ]
+}

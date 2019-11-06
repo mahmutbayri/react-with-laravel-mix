@@ -1,6 +1,7 @@
-var express = require('express');
-var app = express();
-var expressWs = require('express-ws')(app);
+let fs = require('fs')
+let express = require('express');
+let app = express();
+let expressWs = require('express-ws')(app);
 
 app.use(function (req, res, next) {
     console.log('middleware');
@@ -13,20 +14,25 @@ app.get('/', function (req, res, next) {
     res.end();
 });
 
+let rawData = fs.readFileSync('src/examples/websocket-example-data.json');
+let exampleData = JSON.parse(rawData);
+
 app.ws('/', function (ws, req) {
     ws.on('message', function (msg) {
-        ws.send(msg);
+        ws.send(JSON.stringify(exampleData.firstData));
     });
+
+    let updatedData = exampleData.others;
 
     let counter = 0;
     let intervalCounter = setInterval(function () {
-        if (counter >= 500) {
+        if (typeof (updatedData[counter]) === "undefined") {
             clearInterval(intervalCounter);
             return;
         }
-        ws.send(`counter: ${counter}`);
+        ws.send(JSON.stringify(updatedData[counter]));
         counter++;
-    }, 100);
+    }, 1000);
 
     console.log('socket', req.testing);
 });
