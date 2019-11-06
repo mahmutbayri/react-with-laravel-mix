@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import _ from 'lodash';
+import orderBy from 'lodash/orderBy';
 
 class PostList extends Component {
     constructor(props) {
@@ -47,7 +47,7 @@ class PostList extends Component {
             return {
                 currentOrderField: field,
                 currentOrderDirection: currentOrderDirection,
-                items: _.orderBy(state.items, field, currentOrderDirection)
+                items: orderBy(state.items, field, currentOrderDirection)
             }
         });
     }
