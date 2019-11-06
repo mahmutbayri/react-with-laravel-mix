@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Some title",
+      "body": "somebody else's lover"
+    },
+    {
+      "id": 2,
+      "title": "Some title 2",
+      "body": "somebody else's lover 2"
+    },
+    {
+      "id": 3,
+      "title": "Anaconda title",
+      "body": "Anaconda body"
+    },
+    {
+      "id": 4,
+      "title": "Banaconda title",
+      "body": "Banaconda body"
+    }
+  ]
+}
