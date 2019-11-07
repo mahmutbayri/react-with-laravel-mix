@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import orderBy from 'lodash/orderBy';
+import _ from 'lodash';
 
 class PostList extends Component {
     constructor(props) {
@@ -10,10 +10,12 @@ class PostList extends Component {
             isLoaded: false,
             currentOrderDirection: null,
             currentOrderField: null,
-            items: []
+            items: [],
+            allItems: []
         };
 
         this.handleSortBy = this.handleSortBy.bind(this);
+        this.handleFilter = this.handleFilter.bind(this);
     }
 
     componentDidMount() {
@@ -23,6 +25,7 @@ class PostList extends Component {
                 (result) => {
                     this.setState({
                         isLoaded: true,
+                        allItems: result.posts,
                         items: result.posts
                     });
                 },
@@ -35,19 +38,26 @@ class PostList extends Component {
             )
     }
 
+    handleFilter(field, value) {
+        this.setState(function (state, props) {
+            return {
+                items: _.filter(state.allItems, function (item) {
+                    return String(item[field]).toLowerCase().search(value) !== -1;
+                })
+            }
+        });
+    }
+
     handleSortBy(field) {
-
         let currentOrderDirection = 'desc';
-
         if (this.state.currentOrderField === field) {
             currentOrderDirection = this.state.currentOrderDirection === 'desc' ? 'asc' : 'desc';
         }
-
         this.setState(function (state, props) {
             return {
                 currentOrderField: field,
                 currentOrderDirection: currentOrderDirection,
-                items: orderBy(state.items, field, currentOrderDirection)
+                items: _.orderBy(state.allItems, field, currentOrderDirection)
             }
         });
     }
@@ -68,6 +78,12 @@ class PostList extends Component {
                     <th scope="col" onClick={() => this.handleSortBy('title')}>title</th>
                     <th scope="col" onClick={() => this.handleSortBy('body')}>body</th>
                 </tr>
+                <tr>
+                    <td style={{minWidth: 100}}><input className={'form-control'} onChange={(event) => this.handleFilter('id', event.target.value)}/></td>
+                    <td><input className={'form-control'} onChange={(event) => this.handleFilter('title', event.target.value)}/></td>
+                    <td><input className={'form-control'} onChange={(event) => this.handleFilter('body', event.target.value)}/></td>
+                </tr>
+
                 </thead>
                 <tbody>
                 {items.map(item => (
