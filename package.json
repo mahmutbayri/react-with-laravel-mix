@@ -12,20 +12,25 @@
     "start-websocket-server": "node websocket-server.js"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
     "@babel/preset-react": "^7.6.3",
     "axios": "^0.19",
     "cross-env": "^5.1",
+    "dotenv-webpack": "^1.7.0",
     "laravel-mix": "^4.0.7",
     "lodash": "^4.17.13",
+    "query-string": "^6.8.3",
     "resolve-url-loader": "^2.3.1",
     "sass": "^1.15.2",
     "sass-loader": "^7.1.0"
   },
   "dependencies": {
     "bootstrap": "^4.3",
+    "dotenv": "^8.2.0",
     "express": "^4.16.2",
     "express-ws": "^4.0.0",
     "jquery": "^3.4",
+    "prop-types": "^15.7.2",
     "react": "16.11.0",
     "react-dom": "16.11.0"
   }

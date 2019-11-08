@@ -1,11 +1,24 @@
 const mix = require('laravel-mix');
+const Dotenv = require('dotenv-webpack');
 
 // mix.config.resourceRoot = 'src';
+
+mix.config.webpackConfig.plugins = [
+    new Dotenv()
+];
 
 mix.config.webpackConfig.watchOptions = {
     aggregateTimeout: 500,
     poll: 1000,
     ignored: /node_modules/
+};
+
+
+
+mix.config.babelConfig = {
+    plugins: [
+        '@babel/plugin-proposal-class-properties',
+    ]
 };
 
 /*
@@ -41,4 +54,5 @@ mix.react('src/examples/websocket.js', 'public/examples/js');
 
 
 mix.react('src/examples/example-todo-list.js', 'public/examples/js');
+mix.react('src/examples/example_movie_list.js', 'public/examples/js');
 mix.react('src/js/javascriptsample.js', 'public/examples/js');

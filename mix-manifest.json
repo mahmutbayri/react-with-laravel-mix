@@ -2,6 +2,7 @@
     "/public/examples/js/clock.js": "/public/examples/js/clock.js",
     "/public/examples/js/events.js": "/public/examples/js/events.js",
     "/public/examples/js/example-todo-list.js": "/public/examples/js/example-todo-list.js",
+    "/public/examples/js/example_movie_list.js": "/public/examples/js/example_movie_list.js",
     "/public/examples/js/filter-sort-table-ajax-data.js": "/public/examples/js/filter-sort-table-ajax-data.js",
     "/public/examples/js/functional_component.js": "/public/examples/js/functional_component.js",
     "/public/examples/js/generate_table.js": "/public/examples/js/generate_table.js",
