@@ -8,7 +8,7 @@ export default class Example extends Component {
                 <div className="card-body">
                     <h4 className="card-title">{this.props.title}</h4>
                     <p className="card-text">{this.props.text}</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <a href="/examples" className="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         );

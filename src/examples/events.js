@@ -7,7 +7,7 @@ class Toggle extends Component {
         super(props);
         this.state = {
             isToggled: false
-        }
+        };
 
         this.clickHandler = this.clickHandler.bind(this);
     }

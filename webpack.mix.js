@@ -20,6 +20,7 @@ mix.config.webpackConfig.watchOptions = {
  */
 
 mix.react('src/js/app.js', 'public/js')
+    .sass('src/sass/app.scss', 'public/css')
     .sass('node_modules/bootstrap/scss/bootstrap.scss', 'public/css');
 
 
