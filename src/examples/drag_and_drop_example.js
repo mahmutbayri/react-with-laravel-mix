@@ -8,6 +8,7 @@ class DragAndDropExample extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            temporaryImage: false,
             imageListIds: [
                 1005,
                 1003,
@@ -27,9 +28,17 @@ class DragAndDropExample extends Component {
         ev.preventDefault();
     }
 
+    onDragEnd(ev) {
+        ev.preventDefault();
+        this.setState({
+            temporaryImage: false
+        });
+    }
+
     drag(imageId) {
         this.setState({
             currentDragged: imageId,
+            temporaryImage: imageId
         });
     }
 
@@ -38,24 +47,43 @@ class DragAndDropExample extends Component {
             return {
                 selectedIds: state.selectedIds.concat(state.currentDragged),
                 imageListIds: state.imageListIds.filter((item) => item !== state.currentDragged),
+                temporaryImage: false
             }
         })
     }
 
     render() {
         return (
-            <div>
-                <SelectedContainer
-                    allowDrop={this.allowDrop}
-                    drop={this.drop}
-                    selectedIds={this.state.selectedIds}
-                    imagePathPattern={this.imagePathPattern}
-                />
-                <ImageList
-                    drag={this.drag}
-                    imageListIds={this.state.imageListIds}
-                    imagePathPattern={this.imagePathPattern}
-                />
+            <div className="container">
+                <div className="row">
+                    <div className='col-6'>
+                        <div className="card">
+                            <div className="card-body" style={{minHeight: '100px'}}>
+                                <h5 className="card-title">Drag Here</h5>
+                                <SelectedContainer
+                                    allowDrop={this.allowDrop}
+                                    drop={this.drop}
+                                    selectedIds={this.state.selectedIds}
+                                    imagePathPattern={this.imagePathPattern}
+                                    temporaryImage={this.state.temporaryImage}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className='col-6'>
+                        <div className="card">
+                            <div className="card-body">
+                                <h5 className="card-title">Drag From</h5>
+                                <ImageList
+                                    onDragEnd={this.onDragEnd.bind(this)}
+                                    drag={this.drag}
+                                    imageListIds={this.state.imageListIds}
+                                    imagePathPattern={this.imagePathPattern}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
