@@ -1,5 +1,6 @@
 {
     "/public/examples/js/clock.js": "/public/examples/js/clock.js",
+    "/public/examples/js/drag_and_drop_example.js": "/public/examples/js/drag_and_drop_example.js",
     "/public/examples/js/events.js": "/public/examples/js/events.js",
     "/public/examples/js/example-todo-list.js": "/public/examples/js/example-todo-list.js",
     "/public/examples/js/example_movie_list.js": "/public/examples/js/example_movie_list.js",
