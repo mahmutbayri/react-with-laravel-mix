@@ -9,7 +9,8 @@
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "serve": "node index.js",
-    "start-websocket-server": "node websocket-server.js"
+    "start-websocket-server": "node websocket-server.js",
+    "eslint": "./node_modules/.bin/eslint src/examples --ext .js"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.7.0",
@@ -17,6 +18,9 @@
     "axios": "^0.19",
     "cross-env": "^5.1",
     "dotenv-webpack": "^1.7.0",
+    "eslint": "^6.6.0",
+    "eslint-loader": "^3.0.2",
+    "eslint-plugin-react": "^7.16.0",
     "laravel-mix": "^4.0.7",
     "lodash": "^4.17.13",
     "query-string": "^6.8.3",

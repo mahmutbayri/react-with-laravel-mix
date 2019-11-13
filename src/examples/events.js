@@ -12,12 +12,12 @@ class Toggle extends Component {
         this.clickHandler = this.clickHandler.bind(this);
     }
 
-    clickHandler(e) {
+    clickHandler() {
         //(partialState, callback)
         this.setState(function (prevState) {
             return {
-                isToggled: !prevState.isToggled
-            }
+                isToggled: !prevState.isToggled,
+            };
         });
     }
 

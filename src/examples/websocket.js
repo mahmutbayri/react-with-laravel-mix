@@ -15,7 +15,7 @@ webSocket.onmessage = function (e) {
 
 webSocket.onopen = function (e) {
     webSocket.send('Hello Mews!');
-    console.log('connection opened');
+    console.log('connection opened', e.type);
 };
 
 webSocket.onclose = function (e) {
