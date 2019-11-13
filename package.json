@@ -32,6 +32,9 @@
     "jquery": "^3.4",
     "prop-types": "^15.7.2",
     "react": "16.11.0",
-    "react-dom": "16.11.0"
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "16.11.0",
+    "react-transition-group": "^4.3.0",
+    "uuid": "^3.3.3"
   }
 }

@@ -18,5 +18,14 @@ example-simple.html
 example-todo-list.html
 ## Web Socket Example
 example-websocket.html
+## Change Each Row With Animation
+[Script File](../src/examples/change-with-animation.js)
 
+![alt test](example-change-with-animation.jpg)
+
+## Drag And Drop Example
+
+[Script File](../src/examples/drag_and_drop_example.js)
+ 
+![alt test](drag_and_drop_example.jpg)
 
