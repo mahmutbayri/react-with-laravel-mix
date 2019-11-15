@@ -18,6 +18,8 @@ example-simple.html
 example-todo-list.html
 ## Web Socket Example
 example-websocket.html
+## Getting Movie List From Firebase
+[Script File](../src/examples/Firebase)
 ## Change Each Row With Animation
 [Script File](../src/examples/change-with-animation.js)
 

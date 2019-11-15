@@ -56,5 +56,6 @@ mix.react('src/examples/websocket.js', 'public/examples/js');
 mix.react('src/examples/example-todo-list.js', 'public/examples/js');
 mix.react('src/examples/drag_and_drop_example.js', 'public/examples/js');
 mix.react('src/examples/change-with-animation.js', 'public/examples/js');
+mix.react('src/examples/getting-movie-list-from-firebase.js', 'public/examples/js');
 mix.react('src/examples/example_movie_list.js', 'public/examples/js');
 mix.react('src/js/javascriptsample.js', 'public/examples/js');
