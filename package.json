@@ -34,7 +34,7 @@
     "express": "^4.16.2",
     "express-ws": "^4.0.0",
     "firebase": "^7.4.0",
-    "jquery": "^3.4",
+    "jquery": "^3.5",
     "prop-types": "^15.7.2",
     "react": "16.11.0",
     "react-addons-css-transition-group": "^15.6.2",
